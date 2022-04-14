@@ -1,0 +1,18 @@
+html{
+    box-sizing: border-box;
+    font-size: 62.5%;
+}
+
+*, *::after, ::before{
+    box-sizing: inherit;
+}
+
+body{
+    font-size: 1.6rem;
+    font-family: $font;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}

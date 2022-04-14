@@ -1,0 +1,19 @@
+@import './global/normalize';
+@import './global/setting';
+@import './global/base';
+@import './global/helpers';
+
+//Layout
+
+@import './Layout/Main';
+
+// Pages
+
+@import './pages/Home';
+@import './pages/Categorias';
+@import './pages/Categoria';
+
+// Components
+
+@import './components/PokemonModal';
+@import './components/Pokemon';

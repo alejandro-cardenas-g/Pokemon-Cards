@@ -1,0 +1,89 @@
+.active{
+    color: $white-light !important;
+
+    &:hover{
+        background-color: $white-light;
+        color: $secondary !important;
+    }
+}
+
+.card-img,
+.card-img-top{
+    max-width: 20rem;
+    margin: 0 auto;
+    height: 20rem;
+    padding: 1rem;
+}
+
+.card-title{
+    font-weight: 700;
+}
+
+.card-name-info{
+
+    font-size: 1.1rem;
+
+    @media (min-width: 380px){
+        font-size: 1.6rem;
+    }
+}
+
+.spinner{
+    margin: 1rem auto;
+    width: 6rem;
+    height: 6rem;
+    border: 4px solid lighten($color: $secondary, $amount: 33);
+    border-radius: 50%;
+    border-left: 4px solid $secondary;
+    animation: spinner linear infinite 1s;
+}
+
+.btn{
+
+    width: 100%;
+
+    &__search{
+        color: white;
+    
+        &:hover{
+            background-color: darken($color: $secondary, $amount: 10);
+            color: white;
+        }
+    
+    }
+
+
+}
+
+@keyframes spinner{
+
+    0%{
+        transform: rotate(0deg);
+    }
+    100%{
+        transform: rotate(360deg);
+    }
+
+}
+
+.btn-scroll-up{
+    width: 6rem;
+    height: 6rem;
+    position: fixed;
+    bottom: 10px;
+    right: 30px;
+    border-radius: 50%;
+    border: transparent;
+    background-color: #262322;
+    color: white;
+    font-size: 2.5rem;
+    scroll-behavior: smooth;
+
+    @media (min-width: 560px){
+        &{
+            bottom: 10px;
+            right: 60px;
+        }
+    }
+
+}

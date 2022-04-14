@@ -1,0 +1,88 @@
+.home{
+    margin: 5rem auto;
+    padding: 0 0.4rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    &__content{
+        width: 100%;
+        align-items: center;
+        justify-content: center;
+        margin-top: 5rem;
+    }
+
+    &__card{
+        cursor: pointer;
+        text-align: center;
+        border: none;
+        transition: transform 500ms 200ms ease-in-out ;
+
+        &.animate:hover{
+            transform: scale(1.04);
+        }
+
+    }
+
+    &__buscador{
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 1rem;
+        text-align: center;
+        box-shadow: 2px 2px 2px 2px rgba(130, 124, 124, 0.602);
+        padding: 1rem;
+        max-width: 100%;
+        
+        & label{
+            font-size: 1.8rem;
+            font-weight: 400;
+            color: darken($color: white, $amount: 30);
+
+            & span{
+                color: $secondary;
+            }
+        }        
+
+        &  input{
+            font-size: 1.3rem;
+        }
+
+        & button{
+            background-color: $secondary;
+            color: white;
+            font-size: 1.4rem;
+        }
+
+    }
+
+    @media (min-width: 300px){
+
+        &{
+            padding: 0 5rem;
+        }
+
+        &__buscador{    
+            padding: 2rem;
+            &  input{
+                font-size: 1.5rem;
+            }
+
+        }
+
+    }
+
+    @media (min-width: 600px){
+
+        &__buscador{    
+
+            min-width: 50rem;
+
+        }
+
+    }
+
+}
