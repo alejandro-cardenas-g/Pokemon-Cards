@@ -27,7 +27,7 @@ export const PokemonBiography = ({pokemon, species}:IPokemonBiography) => {
                         </div>
                     </div>
                     <div className="pokemon-biography__list">
-                        <p>Abilties:</p>
+                        <p>Abilities:</p>
                         <div>
                             {
 
