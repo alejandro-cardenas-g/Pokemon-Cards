@@ -1,6 +1,6 @@
 import axios, { AxiosResponse } from "axios";
 import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom"
+import { useParams, useNavigate } from 'react-router-dom';
 import { PokemonCard } from "../../components/pokemons";
 import { PokemonNotFound } from "../../components/pokemons/PokemonNotFound";
 import { ScrollButton, Spinner } from "../../components/utils";
@@ -13,6 +13,8 @@ export const Categoria = () => {
     const [loading, setLoading] = useState<boolean>(true);
     const [error, setError] = useState<boolean>(false);
     const [typePok, setTypePok] = useState<string>('');
+    const navigate = useNavigate();
+
     useEffect(() => {
         setLoading(true);
         setError(false);
@@ -36,10 +38,15 @@ export const Categoria = () => {
         })
     }, [id]);
 
+    const handleBack = () => {navigate('/types')};
+
     return (
         <div className="categoria">
-
+        
             <div className="row categoria__content">
+                <div>
+                    <button onClick={handleBack} className="categoria__back"><i className="fa-solid fa-reply"></i></button>
+                </div>
                 {   (typePok) &&
                     <h2 className='categorias__heading'>Pokemons of type: {typePok}</h2>
                 }

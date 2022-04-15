@@ -10,7 +10,7 @@ export const Home = () => {
   const [searchInput, setSearchInput] = useState<string>('');
 
   return (
-    <div className="home h">
+    <div className="home">
 
       <HomeForm searchInput={searchInput} setQuery={setQuery} setSearchInput={setSearchInput}/>
 
