@@ -54,18 +54,30 @@ export const Categoria = () => {
                     (error) 
                     ? 
                         <PokemonNotFound/>
-                    :
-                        pokemons.map((pokemon, index) => (
-                            <PokemonCard pokemon={pokemon} key={`${index}-${pokemon.name}`}/>
-                        ))
+                    :   
+
+                        (!loading) ?
+
+                            (pokemons.length > 0)
+                            ?
+                                pokemons.map((pokemon, index) => (
+                                    <PokemonCard pokemon={pokemon} key={`${index}-${pokemon.name}`}/>
+                                ))
+                            :
+                                <PokemonNotFound/>
+                        
+                        : null
 
                 }
 
                 <Spinner loading={loading}/>
 
             </div>
+            
+            {
+                (pokemons.length > 0 && !loading) && <ScrollButton/>
+            }
 
-            <ScrollButton/>
             
         </div>
 
