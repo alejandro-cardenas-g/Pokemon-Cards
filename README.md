@@ -3,6 +3,7 @@
 ## Description
 
 This is a Typescript React Project using and consuming an API named PokeApi. 
+This Branch includes a little basic test using testing-library.
 
 ## Environment Variables
 
