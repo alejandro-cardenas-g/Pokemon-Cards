@@ -75,7 +75,7 @@ export const PokemonModal = () => {
     
                 }).catch(error => {
                     setError(!!error);
-                    toast.error('This pokemons is still unknown for us. We will find it!')
+                    toast.error('This pokemon is still unknown for us. We will find it!')
                     setLoading(false);
                     closeModal();
                     setPokemonActive(null);
@@ -84,7 +84,7 @@ export const PokemonModal = () => {
             })
             .catch((error) => {
                 setError(!!error);
-                toast.error('This pokemons is still unknown for us. We will find it!')
+                toast.error('This pokemon is still unknown for us. We will find it!')
                 setLoading(false);
                 closeModal();
                 setPokemonActive(null);
