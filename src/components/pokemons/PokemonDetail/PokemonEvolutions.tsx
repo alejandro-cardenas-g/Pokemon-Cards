@@ -19,7 +19,7 @@ export const PokemonEvolutions = ({evolutions}: IPokemonEvolutions) => {
                                 </div>
                                 <div className="col-md-8">
                                 <div className="card-body" style={{textAlign: 'center'}}>
-                                    <p>Evolution From {index + 1}</p>
+                                    <p>Evolution Form {index + 1}</p>
                                     <h5 className="card-title">{capitalizeFirstLetter(poke.name)}</h5>
                                 </div>
                                 </div>
