@@ -4,6 +4,14 @@
 
 This is a Typescript React Project using and consuming an API named PokeApi. 
 
+## Environment Variables
+
+For both production and development environments is required to have the following variable
+
+` REACT_APP_API_URL = https://pokeapi.co/api/v2/ `
+
+This variable can be in .env files such as .env.development or .env.production
+
 ## Author
 
 `Alejandro Cárdenas Galeano`
