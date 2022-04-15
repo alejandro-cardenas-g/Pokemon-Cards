@@ -5,6 +5,7 @@ import Modal from 'react-modal';
 import { useUI } from '../../hooks/useUI';
 import { Spinner } from '../utils';
 import {PokemonDetail} from './PokemonDetail/PokemonDetail';
+import { toast } from 'react-toastify';
 
 const customStyles = {
     content: {
@@ -23,6 +24,7 @@ Modal.setAppElement('#root');
 export const PokemonModal = () => {
 
     const [loading, setLoading] = useState<boolean>(true);
+    const [error, setError] = useState<boolean>(true);
     const [species, setSpecies] = useState<any>({});
     const [pokemon, setPokemon] = useState<any>({});
     const [evolutions, setEvolutions] = useState<any[]>([]);
@@ -72,6 +74,8 @@ export const PokemonModal = () => {
                     setLoading(false);
     
                 }).catch(error => {
+                    setError(!!error);
+                    toast.error('This pokemons is still unknown for us. We will find it!')
                     setLoading(false);
                     closeModal();
                     setPokemonActive(null);
@@ -79,6 +83,8 @@ export const PokemonModal = () => {
 
             })
             .catch((error) => {
+                setError(!!error);
+                toast.error('This pokemons is still unknown for us. We will find it!')
                 setLoading(false);
                 closeModal();
                 setPokemonActive(null);
@@ -104,7 +110,7 @@ export const PokemonModal = () => {
             overlayClassName='modal-fondo'
         >
             {
-                (loading || evolutions.length === 0) ? <Spinner loading={loading}/>
+                (loading || evolutions.length === 0 || !pokemon.name || !error) ? <Spinner loading={loading}/>
                 : <PokemonDetail pokemon={pokemon} species={species} evolutions={evolutions}/>
             }
         </Modal>

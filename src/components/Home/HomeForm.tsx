@@ -1,5 +1,3 @@
-import { useState } from "react";
-
 export const HomeForm = ({setQuery, searchInput, setSearchInput}: IHomeForm) => {
 
     const handleChange = ({target}:React.ChangeEvent<HTMLInputElement>) => {
